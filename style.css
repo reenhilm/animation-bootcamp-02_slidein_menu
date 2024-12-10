@@ -1,0 +1,186 @@
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+    color-scheme: dark light;
+}
+
+/* min body height */
+
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/* @media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} */
+
+/* Deklarera CSS-variabler i :root */
+:root {
+    --blackish-color: #101212;
+    --trueblack-color: #000000;
+    --secondary-color: #222222;
+    --third-color: #a6a6a6;
+    --fourth-color: #F8F8F8;
+    --fifth-color: #eeeeee;
+    --sixth-color: red;
+    --font-family: 'Gill Sans MT', sans-serif;
+    /* --font-size-base: 16px; */
+
+    /* 20px aside nummrena */
+    --font-size-medium: calc(20rem / 16);
+
+    /* 24px aside nummrena */
+    --font-size-large: calc(24rem / 16);
+
+    /* 34px h3 */
+    --font-size-xl: calc(34rem / 16);
+
+    /* 29px h2 */
+    --font-size-2xl: calc(29rem / 16);
+
+    /* 62px h1 */ 
+    --font-size-3xl: calc(62rem / 16);
+}
+
+html {
+    font-size: 100%;
+    line-height: 1;
+    font-family: var(--font-family);
+}
+
+h1, h2 {
+    color: var(--blackish-color);
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+}
+
+h2 {    
+    font-size: var(--font-size-2xl);
+    font-weight: 400;
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    line-height: 1em;
+    margin-bottom: calc(5rem/16);
+}
+
+h3 {
+    color: var(--fourth-color);
+}
+
+aside {
+    font-size: var(--font-size-large);
+    color: var(--third-color);
+    font-weight: bold;
+}
+
+.desc {
+    font-size: var(--font-size-medium);
+    color: var(--third-color);
+    line-height: 1.5;
+    margin-bottom: calc(70rem/16);
+    font-weight: bold;
+}
+
+nav.open {
+    background-color: var(--secondary-color);
+    transition-property: background-color;
+    transition-duration: 2s;
+}
+
+a.toggle {
+    z-index: 100;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: calc(50rem/16);
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: var(--sixth-color);
+    transition: transform 1s;
+}
+
+a.toggle:hover {
+
+    transform: scale(3.6);
+}
+
+main {
+    text-align: center;
+}
+
+body {
+    background-color: var(--fifth-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav {
+    left: calc(-560rem/16);
+    top:0;
+    min-height: 100%;
+    position: absolute;
+    background-color: var(--secondary-color);
+    color: white;
+    padding-top: calc(155rem/16);
+    z-index: 99;
+    width: calc(560rem/16);
+    transition: 0.4s ease-out;
+}
+
+nav a {
+    display: flex;
+    justify-content: space-around;
+    margin-left: calc(35rem/16);
+    gap: calc(32rem/16);
+    text-decoration: none;
+}
+
+h3, .desc {
+    text-align: left;
+}
+
+nav.open {
+    left: 0rem;
+    transition: 0.4s ease-in;
+}
